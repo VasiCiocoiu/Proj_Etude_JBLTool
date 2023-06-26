@@ -1,0 +1,16 @@
+fr\iutfbleau\jbltool\utils\RichTextUtils.class
+fr\iutfbleau\jbltool\utils\ClassInfo.class
+fr\iutfbleau\jbltool\App.class
+fr\iutfbleau\jbltool\managers\ClassManager.class
+fr\iutfbleau\jbltool\documentation\DocumentationParser.class
+fr\iutfbleau\jbltool\Interface\ManuelController$1.class
+fr\iutfbleau\jbltool\utils\ASMStringyfier.class
+fr\iutfbleau\jbltool\Interface\ManuelInterface.class
+fr\iutfbleau\jbltool\utils\LabelNameGenerator.class
+fr\iutfbleau\jbltool\managers\JfileReader.class
+fr\iutfbleau\jbltool\utils\VisibleParagraphStyler$Highlighter.class
+fr\iutfbleau\jbltool\Interface\ManuelController.class
+fr\iutfbleau\jbltool\Interface\ControlChoixFichier.class
+fr\iutfbleau\jbltool\documentation\InstructionDocumentation.class
+fr\iutfbleau\jbltool\Interface\ManuelController$2.class
+fr\iutfbleau\jbltool\utils\VisibleParagraphStyler.class

@@ -1,0 +1,2211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE documentation
+	[
+		<!ELEMENT documentation (instructions)>
+		<!ELEMENT instructions (instruction*)>
+		<!ELEMENT instruction (name,parameters,description,exemple, opcode)>
+		<!ELEMENT name (#PCDATA)>
+		<!ELEMENT parameters (parameter*)>
+		<!ELEMENT parameter (#PCDATA)>
+		<!ELEMENT description (#PCDATA)>
+		<!ELEMENT exemple (#PCDATA)>
+		<!ELEMENT opcode (#PCDATA)>
+	]>
+
+<documentation>
+	<instructions>
+		<instruction>
+			<name>aaload</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction charge une réference d'un tableau dans la stack. L'instruction ne prend rien en paramètre.</description>
+			<exemple>aaload</exemple>
+			<opcode>50</opcode>
+		</instruction>
+		<instruction>
+			<name>aastore</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction  une réference dans un tableau. L'instruction ne prend rien en paramètre.</description>
+			<exemple>aastore (Si une tableau de réference est chargé précédemment, la référence sera stockée dans le tableau).</exemple>
+			<opcode>83</opcode>
+		</instruction>
+		<instruction>
+			<name>aconst_null</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction stocke une réference de valeur null. L'instruction ne prend rien en paramètre.</description> 
+			<exemple>aconst_null</exemple>
+			<opcode>1</opcode>
+		</instruction>
+		<instruction>
+			<name>aload</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+			<description>Cette instruction charge une réference #index donné en paramètre dans la stack. Index est de type unsigned byte.</description>
+			<exemple>aload</exemple>
+			<opcode>25</opcode>
+		</instruction>
+		<instruction>
+			<name>aload_0</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction charge une référence depuis une variable locale 0 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>aload_0</exemple>
+			<opcode>42</opcode>
+		</instruction>
+		<instruction>
+			<name>aload_1</name>
+			<parameters>
+			</parameters>
+   
+			<description>Cette instruction charge une référence depuis une variable locale 1 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>aload_1</exemple>
+			<opcode>43</opcode>
+		</instruction>
+		<instruction>
+			<name>aload_2</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge une référence depuis une variable locale 1 dans la stack. Cette instruction ne prend rien en paramètre.2</description>
+ 
+			<exemple>aload_2</exemple>
+			<opcode>44</opcode>
+		</instruction>
+		<instruction>
+			<name>aload_3</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge une référence depuis une variable locale 3 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>aload_3</exemple>
+			<opcode>45</opcode>
+		</instruction>
+		<instruction>
+			<name>anewarray</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+    
+			<description>Cette instruction crée un nouveau tableau de références.</description>
+ 
+			<exemple>anewarray</exemple>
+			<opcode>189</opcode>
+		</instruction>
+		<instruction>
+			<name>areturn</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction retourne une référence d'une méthode invoquée. Cette méthode ne prend aucun paramètre.</description>
+			<exemple>areturn (Précédé d'un invokestatic par exemple retourne la référence).</exemple>
+ 
+			<opcode>176</opcode>
+		</instruction>
+		<instruction>
+			<name>arraylength</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction permet de retourner la taille d'un tableau sous forme d'un int dans la stack. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>arraylength (Admettons qu'une instruction getstatic appelant une méthode static affiche un tableau arraylength nous permet de sauvegarder sa taille. Nous pouvons donc la stocker avec un istore_0 par exemple).</exemple>
+  
+ 
+			<opcode>190</opcode>
+		</instruction>
+		<instruction>
+			<name>astore</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke une référence dans une variable locale donnée en paramètre #index.</description>
+ 
+			<exemple>astore</exemple>
+			<opcode>58</opcode>
+		</instruction>
+		<instruction>
+			<name>astore_0</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke une référence dans la variable locale astore_0. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>astore_0 (Admettons qu'une instruction de chargement d'un référence d'un tableau par exemple est effectué avant astore_0 se chargera de stocker cette référence.</exemple>
+			<opcode>75</opcode>
+		</instruction>
+		<instruction>
+			<name>astore_1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke une référence dans la variable locale astore_1. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>astore_1 (Admettons qu'une instruction de chargement d'un référence d'un tableau par exemple est effectué avant astore_1 se chargera de stocker cette référence.</exemple>
+			<opcode>76</opcode>
+		</instruction>
+		<instruction>
+			<name>astore_2</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke une référence dans la variable locale astore_2. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>astore_2 (Admettons qu'une instruction de chargement d'un référence d'un tableau par exemple est effectué avant astore_2 se chargera de stocker cette référence.</exemple>
+			<opcode>77</opcode>
+		</instruction>
+		<instruction>
+			<name>astore_3</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke une référence dans la variable locale astore_3. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>astore_3 (Admettons qu'une instruction de chargement d'un référence d'un tableau par exemple est effectué avant astore_3 se chargera de stocker cette référence.</exemple>
+			<opcode>78</opcode>
+		</instruction>
+		<instruction>
+			<name>athrow</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction lève une exception ou une erreur. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>athrow (Précédé d'un invokespecial qui retourne un RuntimeException par exemple).</exemple>
+			<opcode>191</opcode>
+		</instruction>
+		<instruction>
+			<name>baload</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction charge un byte ou un boolean depuis un tableau. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>baload (Précédé d'un aload par exemple charge un byte ou un boolean du tableau. Le tableau chargé doit être du type attendu).</exemple>
+  
+			<opcode>51</opcode>
+		</instruction>
+		<instruction>
+			<name>bastore</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un byte ou un boolean dans un tableau. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>bastore (Précédé d'une instruction de chargemennt par exemple stocke un byte ou un boolean dans un tableau. Le tableau chargé doit être du type attendu).</exemple>
+ 
+			<opcode>84</opcode>
+		</instruction>
+		<instruction>
+			<name>bipush</name>
+			<parameters>
+				<parameter>n</parameter>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur en paramètre "n" dans la stack de type byte vers int. "n" appartient à l'intervalle [-128;127]</description>
+			<exemple>bipush 100 (stocke 100 dans la stack. Peut être utilisé par exemple pour vérifier la condition d'un if. De ce fait bipush peut être suivi de l'instruction if_quelqueChose ou peut être stocké dans un istore_0 par exemple).</exemple>
+ 
+			<opcode>16</opcode>
+		</instruction>
+		<instruction>
+			<name>breakpoint</name>
+			<parameters>
+			</parameters>
+			<description>Cette instrcution montre tout simplement un point d'arrêt, breakpoint ou bp effectuée par l'intermédiaire du déboggueur. Cette instruction ne se raccorde à aucune ligne de code du java.</description>
+			<exemple>breakpoint</exemple>
+			<opcode>202</opcode>
+		</instruction>
+		<instruction>
+			<name>caload</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction charge un char d'un tableau. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>caload</exemple>
+			<opcode>52</opcode>
+		</instruction>
+		<instruction>
+			<name>castore</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un char dans un tableau. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>castore</exemple>
+			<opcode>85</opcode>
+		</instruction>
+		<instruction>
+			<name>checkcast</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Checks whether an objectref is of a certain type, the class reference of which is in the constant pool at index (indexbyte1 &lt;&lt; 8 | indexbyte2)</description>
+			<exemple>TODO</exemple>
+			<opcode>192</opcode>
+		</instruction>
+		<instruction>
+			<name>d2f</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit une valeur de type double se trouvant au sommet de la stack vers le type float. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>d2f</exemple>
+			<opcode>144</opcode>
+		</instruction>
+		<instruction>
+			<name>d2i</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit une valeur de type double se trouvant au sommet de la stack vers le type int. Cette instruction ne prend aucun paramètre.</description>
+  
+ 
+			<exemple>d2i</exemple>
+			<opcode>142</opcode>
+		</instruction>
+		<instruction>
+			<name>d2l</name>
+			<parameters>
+			</parameters>
+  
+		
+			<description>Cette instruction convertit une valeur de type double se trouvant au sommet de la stack vers le type long. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>d2l</exemple>
+			<opcode>143</opcode>
+		</instruction>
+		<instruction>
+			<name>dadd</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une opération d'addition entre deux entiers de type double. Cette instruction ne prend aucun paramètre.</description>
+  
+			<exemple>dadd (Précédé de deux dload par exemple, l'opération d'addition sera effectuée).</exemple>
+			<opcode>99</opcode>
+		</instruction>
+		<instruction>
+			<name>daload</name>
+			<parameters>
+			</parameters>
+  
+		
+  
+			<description>Cette instruction charge un entier de type double depuis un tableau. Le tableau doit être de type double. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>daload</exemple>
+			<opcode>49</opcode>
+		</instruction>
+		<instruction>
+			<name>dastore</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un entier de type double dans un tableau. Le tableau doit être de type double. Cette instruction ne prend aucun paramètre.</description>
+  
+			
+ 
+			<exemple>dastore (Précédé du tableau et de la valeur dastore l'ajoutera au tableau).</exemple>
+			<opcode>82</opcode>
+		</instruction>
+		<instruction>
+			<name>dcmpg</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction compare deux entiers de type double. Si la première valeur est supérieur à la deuxième la valeur de type int "1" est envoyée dans la stack. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>dcmpg (Compare deux entiers chargés précédemment par exemple).</exemple>
+			<opcode>152</opcode>
+		</instruction>
+		<instruction>
+			<name>dcmpl</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction compare deux entiers de type double. Si la première valeur est inférieur à la deuxième la valeur de type int "-1" est envoyée dans la stack. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>dcmpg (Compare deux entiers chargés précédemment par exemple).</exemple>
+			<opcode>151</opcode>
+		</instruction>
+		<instruction>
+			<name>dconst_0</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type double "0" dans la stack. L'instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>dconst_0</exemple>
+			<opcode>14</opcode>
+		</instruction>
+		<instruction>
+			<name>dconst_1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type double "1" dans la stack. L'instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>dconst_1</exemple>
+			<opcode>15</opcode>
+		</instruction>
+		<instruction>
+			<name>ddiv</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue l'opération division entre deux entiers de type double. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>ddiv (Précédé du chargement de deux entiers double effectue l'opération de division).</exemple>
+ 
+			<opcode>111</opcode>
+		</instruction>
+		<instruction>
+			<name>dload</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+  
+			<description>Cette instruction charge un double #index donné en paramètre dans la stack. Index est de type unsigned byte.</description>
+ 
+			<exemple>dload</exemple>
+			<opcode>24</opcode>
+		</instruction>
+		<instruction>
+			<name>dload_0</name>
+			<parameters>
+			</parameters>
+  
+
+  
+			<description>Cette instruction charge un double depuis la variable locale 0 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dload_0</exemple>
+			<opcode>38</opcode>
+		</instruction>
+		<instruction>
+			<name>dload_1</name>
+			<parameters>
+			</parameters>
+  
+	
+  
+			<description>Cette instruction charge un double depuis la variable locale 1 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dload_1</exemple>
+			<opcode>39</opcode>
+		</instruction>
+		<instruction>
+			<name>dload_2</name>
+			<parameters>
+			</parameters>
+  
+
+  
+			<description>Cette instruction charge un double depuis la variable locale 2 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dload_3</exemple>
+			<opcode>40</opcode>
+		</instruction>
+		<instruction>
+			<name>dload_3</name>
+			<parameters>
+			</parameters>
+  
+			
+  
+			<description>Cette instruction charge un double depuis la variable locale 3 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dload_3</exemple>
+			<opcode>41</opcode>
+		</instruction>
+		<instruction>
+			<name>dmul</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une opération de multiplication entre deux valeurs de type double. Cette instruction ne prend pas de paramètre</description>
+			<exemple>dmul (Précédé de deux chargements de double l'instruction les multiplie et retournés sa valeur dans la stack).</exemple>
+ 
+			<opcode>107</opcode>
+		</instruction>
+		<instruction>
+			<name>dneg</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction rend une valeur de type double négative. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>dneg (L'instruction rend négative la dernière valeur ajoutée dans la stack).</exemple>
+ 
+			<opcode>119</opcode>
+		</instruction>
+		<instruction>
+			<name>drem</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue une opération de division pour obtenir le reste entre deux valeurs de type double. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>drem (Précédé de deux chargements de double l'instruction effectue une division et retournés le reste dans la stack).</exemple>
+ 
+			<opcode>115</opcode>
+		</instruction>
+		<instruction>
+			<name>dreturn</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction retourne un double d'une méthode. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dreturn</exemple>
+			<opcode>175</opcode>
+		</instruction>
+		<instruction>
+			<name>dstore</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+  
+
+  
+			<description>Cette instruction stocke une valeur de type double dans une variable locale donnée en paramètre #index.</description>
+ 
+			<exemple>dstore</exemple>
+			<opcode>57</opcode>
+		</instruction>
+		<instruction>
+			<name>dstore_0</name>
+			<parameters>
+			</parameters>
+  
+			
+  
+			<description>Cette instruction stocke un double dans la variable locale dstore_0. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>dstore_0 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>71</opcode>
+		</instruction>
+		<instruction>
+			<name>dstore_1</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un double dans la variable locale dstore_1. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>dstore_11 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>72</opcode>
+		</instruction>
+		<instruction>
+			<name>dstore_2</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un double dans la variable locale dstore_2. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>dstore_2 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>73</opcode>
+		</instruction>
+		<instruction>
+			<name>dstore_3</name>
+			<parameters>
+			</parameters>
+  
+			
+  
+			<description>Cette instruction stocke un double dans la variable locale dstore_3. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>dstore_3 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>74</opcode>
+		</instruction>
+		<instruction>
+			<name>dsub</name>
+			<parameters>
+			</parameters>
+  
+
+  
+			<description>Cette instruction effectue une opération de soustraction entre deux valeurs de type double au sommet de la stack. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>dsub (effectue la soustraction des deux valeurs de types double se situant au sommet de la stack).</exemple>
+ 
+			<opcode>103</opcode>
+		</instruction>
+		<instruction>
+			<name>dup</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une copie de la valeur se situant au sommet de la stack et la met dans la stack. Cette instruction ne prend pas de paramètre.</description>
+  
+			
+ 
+			<exemple>dup</exemple>
+			<opcode>89</opcode>
+		</instruction>
+		<instruction>
+			<name>dup_x1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une copie de la valeur se situant au sommet de la stack et la met dans la stack deux positions après le sommet. Cette instruction ne prend pas de paramètre.</description>
+  
+ 
+			<exemple>dup_x1</exemple>
+			<opcode>90</opcode>
+		</instruction>
+		<instruction>
+			<name>dup_x2</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une copie de la valeur se situant au sommet de la stack et la met dans la stack deux ou trois positions après le sommet. Cette instruction ne prend pas de paramètre.</description>
+  
+ 
+			<exemple>dup_x2</exemple>
+			<opcode>91</opcode>
+		</instruction>
+		<instruction>
+			<name>dup2</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une copie des deux valeurs du sommet de la stack et les place dans la stack dans l'ordre de leur copie. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dup2</exemple>
+			<opcode>92</opcode>
+		</instruction>
+		<instruction>
+			<name>dup2_x1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une copie des deux valeurs du sommet de la stack et les place dans la stack dans l'ordre de leur copie deux ou trois positions après le sommet. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dup2_x1</exemple>
+			<opcode>93</opcode>
+		</instruction>
+		<instruction>
+			<name>dup2_x2</name>
+			<parameters>
+			</parameters>
+  
+			
+  
+			<description>Cette instruction effectue une copie des deux valeurs du sommet de la stack et les place dans la stack dans l'ordre de leur copie deux ou trois positions après le sommet. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>dup2_x2</exemple>
+			<opcode>94</opcode>
+		</instruction>
+		<instruction>
+			<name>f2d</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction convertit un float en double. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>f2d</exemple>
+			<opcode>141</opcode>
+		</instruction>
+		<instruction>
+			<name>f2i</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit un float en int. Cette instruction ne prend pas de paramètre.</description>
+  
+ 
+			<exemple>f2i</exemple>
+			<opcode>139</opcode>
+		</instruction>
+		<instruction>
+			<name>f2l</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction convertit un float en long. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>f2l</exemple>
+			<opcode>140</opcode>
+		</instruction>
+		<instruction>
+			<name>fadd</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue une opération d'addition entre deux entiers de type float. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>fadd (Précédé de deux dload par exemple, l'opération d'addition sera effectuée).</exemple>
+			<opcode>98</opcode>
+		</instruction>
+		<instruction>
+			<name>faload</name>
+			<parameters>
+			</parameters>
+  
+		
+  
+			<description>Cette instruction charge un entier de type float depuis un tableau. Le tableau doit être de type float. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>faload</exemple>
+			<opcode>48</opcode>
+		</instruction>
+		<instruction>
+			<name>fastore</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un entier de type double dans un tableau. Le tableau doit être de type double. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>fastore (Précédé du tableau et de la valeur dastore l'ajoutera au tableau).</exemple>
+			<opcode>81</opcode>
+		</instruction>
+		<instruction>
+			<name>fcmpg</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction compare deux entiers de type float. Si la première valeur est supérieur à la deuxième la valeur de type int "1" est envoyée dans la stack. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>fcmpg</exemple>
+			<opcode>150</opcode>
+		</instruction>
+		<instruction>
+			<name>fcmpl</name>
+			<parameters>
+			</parameters>
+  
+			
+  
+			<description>Cette instruction compare deux entiers de type float. Si la première valeur est inférieur à la deuxième la valeur de type int "-1" est envoyée dans la stack. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>fcmpl</exemple>
+			<opcode>149</opcode>
+		</instruction>
+		<instruction>
+			<name>fconst_0</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction stocke la valeur de type float "0" dans la stack. L'instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>fconst_0</exemple>
+			<opcode>11</opcode>
+		</instruction>
+		<instruction>
+			<name>fconst_1</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke la valeur de type float "1" dans la stack. L'instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>fconst_1</exemple>
+			<opcode>12</opcode>
+		</instruction>
+		<instruction>
+			<name>fconst_2</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke la valeur de type float "2" dans la stack. L'instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>fconst_2</exemple>
+			<opcode>13</opcode>
+		</instruction>
+		<instruction>
+			<name>fdiv</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération division entre deux entiers de type float. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>fdiv (Précédé du chargement de deux entiers float effectue l'opération de division).</exemple>
+ 
+			<opcode>110</opcode>
+		</instruction>
+		<instruction>
+			<name>fload</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+    
+			<description>Cette instruction charge un double #index donné en paramètre dans la stack. Index est de type unsigned byte.</description>
+ 
+			<exemple>fload</exemple>
+			<opcode>23</opcode>
+		</instruction>
+		<instruction>
+			<name>fload_0</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un float depuis la variable locale 0 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>fload_0</exemple>
+			<opcode>34</opcode>
+		</instruction>
+		<instruction>
+			<name>fload_1</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un float depuis la variable locale 1 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>fload_1</exemple>
+			<opcode>35</opcode>
+		</instruction>
+		<instruction>
+			<name>fload_2</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un float depuis la variable locale 2 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>fload_2</exemple>
+			<opcode>36</opcode>
+		</instruction>
+		<instruction>
+			<name>fload_3</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un float depuis la variable locale 3 dans la stack. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>fload_3</exemple>
+			<opcode>37</opcode>
+		</instruction>
+		<instruction>
+			<name>fmul</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une opération de multiplication entre deux valeurs de type float. Cette instruction ne prend pas de paramètre</description>
+			<exemple>fmul (Précédé de deux chargements de float l'instruction les multiplie et retournés sa valeur dans la stack).</exemple>
+ 
+			<opcode>106</opcode>
+		</instruction>
+		<instruction>
+			<name>fneg</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction rend une valeur de type float négative. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>fneg (L'instruction rend négative la dernière valeur de type float ajoutée dans la stack).</exemple>
+ 
+			<opcode>118</opcode>
+		</instruction>
+		<instruction>
+			<name>frem</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue une opération de division pour obtenir le reste entre deux valeurs de type float. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>frem (Précédé de deux chargements de float l'instruction effectue une division et retournés le reste dans la stack).</exemple>
+ 
+			<opcode>114</opcode>
+		</instruction>
+		<instruction>
+			<name>freturn</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction retourne un float d'une méthode. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>freturn</exemple>
+			<opcode>174</opcode>
+		</instruction>
+		<instruction>
+			<name>fstore</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+    
+			<description>Cette instruction stocke une valeur de type float dans le paramètre #index. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>fstore</exemple>
+			<opcode>56</opcode>
+		</instruction>
+		<instruction>
+			<name>fstore_0</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un float dans la variable locale fstore_0. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>fstore_0 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>67</opcode>
+		</instruction>
+		<instruction>
+			<name>fstore_1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un float dans la variable locale fstore_1. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>fstore_1 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>68</opcode>
+		</instruction>
+		<instruction>
+			<name>fstore_2</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un float dans la variable locale fstore_2. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>fstore_2 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>69</opcode>
+		</instruction>
+		<instruction>
+			<name>fstore_3</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un float dans la variable locale fstore_3. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>fstore_3 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>70</opcode>
+		</instruction>
+		<instruction>
+			<name>fsub</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue une opération de soustraction entre deux valeurs de type double au sommet de la stack. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>fsub (effectue la soustraction des deux valeurs de types float se situant au sommet de la stack).</exemple>
+ 
+			<opcode>102</opcode>
+		</instruction>
+		<instruction>
+			<name>getfield</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Cette instruction retourne le champs de valeur d'un objet donnée.</description>
+			<exemple>getfield    Field OBJ.obj:"Ljava/lang/Object;"; (Une instance OBJ possède un champ d'objet obj)</exemple>
+			<opcode>180</opcode>
+		</instruction>
+		<instruction>
+			<name>getstatic</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+  
+			<description>Cette instruction retourne un champ de valeur d'un objet static.</description>
+			<exemple>getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream; (Nous voyons que getstatic charge la méthode print afin d'afficher un résultat en java).</exemple>
+  
+ 
+			<opcode>178</opcode>
+		</instruction>
+		<instruction>
+			<name>goto</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction signifie un saut vers une autre instruction du code.</description>
+  
+			<exemple>goto 11 (L'instruction effectue un saut vers l'instruction concernée. Cette instruction est notamment utiliser lors de boucle afin de recommencer les instructions).</exemple>
+ 
+			<opcode>167</opcode>
+		</instruction>
+		<instruction>
+			<name>goto_w</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+				<parameter>branchbyte3</parameter>
+				<parameter>branchbyte4</parameter>
+			</parameters>
+  
+			<description>Cette instruction signifie un saut vers une autre instruction du code. La différence avec goto est le nombre de répétitions en effet, l'instruction est utile lorsque les sauts dépassent la limite de goto qui est de 32767.</description>
+			<exemple>goto_w 11 (L'instruction effectue un saut vers l'instruction concernée. Cette instruction est utilisée lors de boucle à très grande valeur de conditions afin de recommencer les instructions).</exemple>
+ 
+			<opcode>200</opcode>
+		</instruction>
+		<instruction>
+			<name>i2b</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit un int en byte. Cette instruction ne prend pas de paramètre.</description>
+  
+ 
+			<exemple>i2b</exemple>
+			<opcode>145</opcode>
+		</instruction>
+		<instruction>
+			<name>i2c</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit un int en char. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>i2c</exemple>
+			<opcode>146</opcode>
+		</instruction>
+		<instruction>
+			<name>i2d</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction convertit un int en double. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>i2d</exemple>
+			<opcode>135</opcode>
+		</instruction>
+		<instruction>
+			<name>i2f</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit un int en float. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>i2f</exemple>
+			<opcode>134</opcode>
+		</instruction>
+		<instruction>
+			<name>i2l</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction convertit un int en long. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>i2f</exemple>
+			<opcode>133</opcode>
+		</instruction>
+		<instruction>
+			<name>i2s</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction convertit un int en short. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>i2s</exemple>
+			<opcode>147</opcode>
+		</instruction>
+		<instruction>
+			<name>iadd</name>
+			<parameters>
+			</parameters>
+ 
+  
+			<description>Cette instruction récupère deux entiers dans la stack et les additionne. Cette instruction renvoie un résultat de type int. Elle ne prend aucun argument.</description>
+ 
+			<exemple>iadd</exemple>
+			<opcode>96</opcode>
+		</instruction>
+		<instruction>
+			<name>iaload</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction charge un entier de type float depuis un tableau. Le tableau doit être de type float. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>iaload</exemple>
+			<opcode>46</opcode>
+		</instruction>
+		<instruction>
+			<name>iand</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération du AND logique bit à bit entre deux entiers de type int. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>iand</exemple>
+			<opcode>126</opcode>
+		</instruction>
+		<instruction>
+			<name>iastore</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un entier de type int dans un tableau. Le tableau doit être de type int. Cette instruction ne prend aucun paramètre.</description>
+  
+			<exemple>iastore</exemple>
+			<opcode>79</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_m1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "-1" dans la stack. L'instruction ne prend rien en paramètre.</description>
+  
+ 
+			<exemple>iconst_m1</exemple>
+			<opcode>2</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_0</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "0" dans la stack. L'instruction ne prend rien en paramètre.</description>
+  
+ 
+			<exemple>iconst_0</exemple>
+			<opcode>3</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_1</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "1" dans la stack. L'instruction ne prend rien en paramètre.</description>
+  
+ 
+			<exemple>iconst_1</exemple>
+			<opcode>4</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_2</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "2" dans la stack. L'instruction ne prend rien en paramètre.</description>
+  
+ 
+			<exemple>iconst_2</exemple>
+			<opcode>5</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_3</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "3" dans la stack. L'instruction ne prend rien en paramètre.</description>
+  
+ 
+			<exemple>iconst_3</exemple>
+			<opcode>6</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_4</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "4" dans la stack. L'instruction ne prend rien en paramètre.</description>
+   
+			<exemple>iconst_4</exemple>
+			<opcode>7</opcode>
+		</instruction>
+		<instruction>
+			<name>iconst_5</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type int "5" dans la stack. L'instruction ne prend rien en paramètre.</description>
+   
+			<exemple>iconst_5</exemple>
+			<opcode>8</opcode>
+		</instruction>
+		<instruction>
+			<name>idiv</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération division entre deux entiers de type int. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>idiv (Précédé du chargement de deux entiers de type int effectue l'opération de division).</exemple>
+ 
+			<opcode>108</opcode>
+		</instruction>
+		<instruction>
+			<name>if_acmpeq</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux réferences chargées et si la première chargée est égale à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_acmpeq</exemple>
+			<opcode>165</opcode>
+		</instruction>
+		<instruction>
+			<name>if_acmpne</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux réferences chargées et si la première chargée n'est pas égale à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_acmpne</exemple>
+			<opcode>166</opcode>
+		</instruction>
+		<instruction>
+			<name>if_icmpeq</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux int chargées et si la première chargée est égale à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_icmpeq</exemple>
+			<opcode>159</opcode>
+		</instruction>
+		<instruction>
+			<name>if_icmpge</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux int chargées et si la première chargée est supérieur ou égale à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>ic_icmpge</exemple>
+			<opcode>162</opcode>
+		</instruction>
+		<instruction>
+			<name>if_icmpgt</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux int chargées et si la première chargée est strictement supérieur à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_icmpgt</exemple>
+			<opcode>163</opcode>
+		</instruction>
+		<instruction>
+			<name>if_icmple</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux int chargées et si la première chargée est inférieure ou égale à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_icmple</exemple>
+			<opcode>164</opcode>
+		</instruction>
+		<instruction>
+			<name>if_icmplt</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux int chargées et si la première chargée est strictement inférieur à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_icmplt</exemple>
+			<opcode>161</opcode>
+		</instruction>
+		<instruction>
+			<name>if_icmpne</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre deux int chargées et si la première chargée est égale à la deuxième alors elle effectuera l'instruction suivante.</description>
+			<exemple>if_icmpne</exemple>
+			<opcode>160</opcode>
+		</instruction>
+		<instruction>
+			<name>ifeq</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et 0. Si la valeur chargée est égale à 0 alors elle effectuera l'instruction suivante.</description>
+			<exemple>ifeq</exemple>
+			<opcode>153</opcode>
+		</instruction>
+		<instruction>
+			<name>ifge</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et 0. Si la valeur chargée est supérieur ou égale à 0 alors elle effectuera l'instruction suivante.</description>
+			<exemple>ifge</exemple>
+			<opcode>156</opcode>
+		</instruction>
+		<instruction>
+			<name>ifgt</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et 0. Si la valeur chargée est strictement supérieur à 0 alors elle effectuera l'instruction suivante.</description>
+			<exemple>igt</exemple>
+			<opcode>157</opcode>
+		</instruction>
+		<instruction>
+			<name>ifle</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et 0. Si la valeur chargée est inférieure ou égale à 0 alors elle effectuera l'instruction suivante.</description>
+			<exemple>ifle</exemple>
+			<opcode>158</opcode>
+		</instruction>
+		<instruction>
+			<name>iflt</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et 0. Si la valeur chargée est strictement inférieure à 0 alors elle effectuera l'instruction suivante.</description>
+			<exemple>iflt</exemple>
+			<opcode>155</opcode>
+		</instruction>
+		<instruction>
+			<name>ifne</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et 0. Si la valeur chargée n'est pas égale à 0 alors elle effectuera l'instruction suivante.</description>
+			<exemple>TODO</exemple>
+			<opcode>154</opcode>
+		</instruction>
+		<instruction>
+			<name>ifnonnull</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et la valeur null. Si la valeur chargée n'est pas à null alors elle effectuera l'instruction suivante.</description>
+			<exemple>ifnonnull</exemple>
+			<opcode>199</opcode>
+		</instruction>
+		<instruction>
+			<name>ifnull</name>
+			<parameters>
+				<parameter>branchbyte1</parameter>
+				<parameter>branchbyte2</parameter>
+			</parameters>
+			<description>Cette instruction va effectuer un if entre une valeur chargée et la valeur null. Si la valeur chargée est null alors elle effectuera l'instruction suivante.</description>
+			<exemple>ifnull</exemple>
+			<opcode>198</opcode>
+		</instruction>
+		<instruction>
+			<name>iinc</name>
+			<parameters>
+				<parameter>index</parameter>
+				<parameter>const</parameter>
+			</parameters>
+			<description>Cette instruction va incrémenter une variable locale.</description>
+			<exemple>iinc</exemple>
+			<opcode>132</opcode>
+		</instruction>
+		<instruction>
+			<name>iload</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction charge une valeur #index donné en paramètre dans la stack. Index est de type int.</description>
+			<exemple>iload 4 (charge la valeuyr de type int "4" dans la stack)</exemple>
+ 
+			<opcode>21</opcode>
+		</instruction>
+		<instruction>
+			<name>iload_0</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un int depuis une variable locale 0 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>iload_0</exemple>
+			<opcode>26</opcode>
+		</instruction>
+		<instruction>
+			<name>iload_1</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un int depuis une variable locale 1 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>iload_1</exemple>
+			<opcode>27</opcode>
+		</instruction>
+		<instruction>
+			<name>iload_2</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un int depuis une variable locale 2 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>iload_3</exemple>
+			<opcode>28</opcode>
+		</instruction>
+		<instruction>
+			<name>iload_3</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction charge un int depuis une variable locale 3 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>iload_3</exemple>
+			<opcode>29</opcode>
+		</instruction>
+		<instruction>
+			<name>impdep1</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction est reservé au débogueur et ne sucite pas d'intérêts au code java.</description>
+			<exemple>impdep1</exemple>
+			<opcode>254</opcode>
+		</instruction>
+		<instruction>
+			<name>impdep2</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction est reservé au débogueur et ne sucite pas d'intérêts au code java.</description>
+			<exemple>TODO</exemple>
+			<opcode>255</opcode>
+		</instruction>
+		<instruction>
+			<name>imul</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction multiplie deux int depuis la stack. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>imul (L'instruction multiplie deux int qui par exemple vont être chargés avec iload avant).</exemple>
+ 
+			<opcode>104</opcode>
+		</instruction>
+		<instruction>
+			<name>ineg</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction rend négatif la valeur int de la stack. Elle effectue une soustration à 0. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>ineg (L'instruction rend négatif un int qui est par exemple chargé avec iload avant).</exemple>
+ 
+			<opcode>116</opcode>
+		</instruction>
+		<instruction>
+			<name>instanceof</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+  
+			<description>Cette instruction correspond au verbe instance of du java et permet de comparer un objet afin de savoir si son type correspond bien à celui que nous voulons.</description>
+  
+ 
+			<exemple>INSTANCEOF java/lang/Object</exemple>
+			<opcode>193</opcode>
+		</instruction>
+		<instruction>
+			<name>invokedynamic</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+				<parameter>0</parameter>
+				<parameter>0</parameter>
+			</parameters>
+			<description>Cette instruction indique que l'invocation d'une méthode avec un opcode correspondant à invokedynamic vu pour la première fois a eu lieu. On appelle cela une méthode. La méthode retournera un pointeur que la JVM devra exécuter.</description>
+			<exemple>invokedynamic</exemple>
+			<opcode>186</opcode>
+		</instruction>
+		<instruction>
+			<name>invokeinterface</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+				<parameter>count</parameter>
+				<parameter>0</parameter>
+			</parameters>
+			<description>Cette instruction indique l'invocation d'une méthode d'interface.</description>
+			<exemple>invokeinterface method_path (L'instruction montre le chemin de la méthode invoquée)</exemple>
+			<opcode>185</opcode>
+		</instruction>
+		<instruction>
+			<name>invokespecial</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Cette instruction indique l'invocation d'une méthode de type d'accès private.</description>
+			<exemple>invokespecial method_path (L'instruction montre le chemin de la méthode invoquée)</exemple>
+			<opcode>183</opcode>
+		</instruction>
+		<instruction>
+			<name>invokestatic</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Cette instruction indique une invocation de méthode de type static.</description>
+			<exemple>invokestatic static_method_path (L'instruction montre le chemin de la méthode invoquée)</exemple>
+			<opcode>184</opcode>
+		</instruction>
+		<instruction>
+			<name>invokevirtual</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Cette instruction indique une invocation d'une méthode de type d'accès public.</description>
+			<exemple>invokevirtual method_path (L'instruction montre le chemin de la méthode invoquée)</exemple>
+			<opcode>182</opcode>
+		</instruction>
+		<instruction>
+			<name>ior</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue l'opération OR logique entre deux entiers de type int. Cette instruction ne prend aucun paramètre.</description>
+  
+ 
+			<exemple>ior</exemple>
+			<opcode>128</opcode>
+		</instruction>
+		<instruction>
+			<name>irem</name>
+			<parameters>
+			</parameters>
+  
+
+  
+			<description>Cette instruction effectue une opération de division pour obtenir le reste entre deux valeurs de type int. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>irem (Précédé de deux chargements de int l'instruction effectue une division et retournés le reste dans la stack).</exemple>
+ 
+			<opcode>112</opcode>
+		</instruction>
+		<instruction>
+			<name>ireturn</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction retourne un int d'une méthode. Cette instruction ne prend pas de paramètre.</description>
+  
+ 
+			<exemple>ireturn</exemple>
+			<opcode>172</opcode>
+		</instruction>
+		<instruction>
+			<name>ishl</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue un décalage des bits vers la gauche d'une valeur int.</description>
+ 
+			<exemple>ishl</exemple>
+			<opcode>120</opcode>
+		</instruction>
+		<instruction>
+			<name>ishr</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue un décalage des bits vers la droite d'une valeur int.</description>
+ 
+			<exemple>ishr</exemple>
+			<opcode>122</opcode>
+		</instruction>
+		<instruction>
+			<name>istore</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+    
+			<description>Cette instruction stocke une valeur de type int dans une variable locale donnée en paramètre #index.</description>
+ 
+			<exemple>TODO</exemple>
+			<opcode>54</opcode>
+		</instruction>
+		<instruction>
+			<name>istore_0</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un int dans la variable locale istore_0. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>istore_0 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>59</opcode>
+		</instruction>
+		<instruction>
+			<name>istore_1</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un int dans la variable locale istore_1. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>istore_1 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>60</opcode>
+		</instruction>
+		<instruction>
+			<name>istore_2</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un int dans la variable locale istore_2. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>istore_2 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>61</opcode>
+		</instruction>
+		<instruction>
+			<name>istore_3</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un int dans la variable locale istore_3. Cette instruction ne prend pas de paramètre</description>
+			<exemple>istore_3 (Précédé d'un bipush le store stocke la valeur donné par le bipush dans la variable locale).</exemple>
+ 
+			<opcode>62</opcode>
+		</instruction>
+		<instruction>
+			<name>isub</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une opération de soustraction entre deux valeurs de type int présent au sommet de la stack. Cette instruction ne prend pas de paramètre.</description>
+			<exemple>isub (effectue la soustraction des deux valeurs de types int se situant au sommet de la stack).</exemple>
+ 
+			<opcode>100</opcode>
+		</instruction>
+		<instruction>
+			<name>iushr</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération de Logical Shift Right entre une valeur de type int et une valeur de type int. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>lushr (Suite à un long et un int chargés via un iload et un iload par exemple effectue l'opération de Logical Shift Right entre les deux valeurs).</exemple>
+ 
+			<opcode>124</opcode>
+		</instruction>
+		<instruction>
+			<name>ixor</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue l'opération ou exculif (XOR) entre deux valeurs de type int. Cette instruction ne prend aucun paramètres.</description>
+			<exemple>lxor (Suite à deux int chargés via un iload par exemple effectue l'opération xor entre les deux valeurs).</exemple>
+ 
+			<opcode>130</opcode>
+		</instruction>
+		<instruction>
+			<name>l2d</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit un long en double. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>l2d</exemple>
+			<opcode>138</opcode>
+		</instruction>
+		<instruction>
+			<name>l2f</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction convertit un long en float. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>l2f</exemple>
+			<opcode>137</opcode>
+		</instruction>
+		<instruction>
+			<name>l2i</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction convertit un long en int. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>l2i</exemple>
+			<opcode>136</opcode>
+		</instruction>
+		<instruction>
+			<name>ladd</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction récupère deux entiers dans la stack et les additionne. Cette instruction renvoie un résultat de type long. Elle ne prend aucun argument.</description>
+ 
+			<exemple>TODO</exemple>
+			<opcode>97</opcode>
+		</instruction>
+		<instruction>
+			<name>laload</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction charge un entier de type long depuis un tableau. Le tableau doit être de type long. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>laload</exemple>
+			<opcode>47</opcode>
+		</instruction>
+		<instruction>
+			<name>land</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue l'opération du AND logique bit à bit entre deux entiers de type long. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>land</exemple>
+			<opcode>127</opcode>
+		</instruction>
+		<instruction>
+			<name>lastore</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke un entier de type long dans un tableau. Le tableau doit être de type long. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>lastore</exemple>
+			<opcode>80</opcode>
+		</instruction>
+		<instruction>
+			<name>lcmp</name>
+			<parameters>
+			</parameters>
+			<description>Push 0 if the two longs are the same, 1 if value1 is greater than value2, -1 otherwise</description>
+			<exemple>TODO</exemple>
+			<opcode>148</opcode>
+		</instruction>
+		<instruction>
+			<name>lconst_0</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction stocke la valeur de type long "0" dans la stack. L'instruction ne prend rien en paramètre.</description>
+  
+ 
+			<exemple>lconst_0</exemple>
+			<opcode>9</opcode>
+		</instruction>
+		<instruction>
+			<name>lconst_1</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke la valeur de type long "1" dans la stack. L'instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>lconst_1</exemple>
+			<opcode>10</opcode>
+		</instruction>
+		<instruction>
+			<name>ldc</name>
+			<parameters>
+				<parameter>n</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke dans la stack la valeur donné en paramètre qui peut être de type string, int, float, class, java.lang.invoke.methodtype, java.lang.invoke.methodhandle.</description>
+ 
+			<exemple>ldc #7 (Partons du principe que #7 est la ligne où une méthode retourne un string le ldc retourneras la valeur de retour, soit le string de la méthode dans la pile).</exemple>
+			<opcode>18</opcode>
+		</instruction>
+		<instruction>
+			<name>ldc_w</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke dans la stack la valeur donné en paramètre qui peut être de type string, int, float, class, java.lang.invoke.methodtype, java.lang.invoke.methodhandle. La différence avec l'instruction ldc est qu'elle pointe sur un index prenant deux bytes.</description>
+ 
+			<exemple>TODO</exemple>
+			<opcode>19</opcode>
+		</instruction>
+		<instruction>
+			<name>ldc2_w</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke dans la stack la valeur donné en paramètre qui peut être de type long ou double. Cette instruction va par ailleurs pointer sur un index prenant deux bytes.</description>
+ 
+			<exemple>TODO</exemple>
+			<opcode>20</opcode>
+		</instruction>
+		<instruction>
+			<name>ldiv</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue l'opération division entre deux entiers de type long. Cette instruction ne prend aucun paramètre.</description>
+   
+			<exemple>ldiv</exemple>
+			<opcode>109</opcode>
+		</instruction>
+		<instruction>
+			<name>lload</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction charge une valeur #index donné en paramètre dans la stack. Index est de type long.</description>
+			<exemple>lload 4 (charge la valeur de type long "4" dans la stack</exemple>
+ 
+			<opcode>22</opcode>
+		</instruction>
+		<instruction>
+			<name>lload_0</name>
+			<parameters>
+			</parameters>
+  
+		
+			<description>Cette instruction charge un long depuis une variable locale 0 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>lload_0</exemple>
+			<opcode>30</opcode>
+		</instruction>
+		<instruction>
+			<name>lload_1</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction charge un long depuis une variable locale 1 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>lload_1</exemple>
+			<opcode>31</opcode>
+		</instruction>
+		<instruction>
+			<name>lload_2</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction charge un long depuis une variable locale 2 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>lload_2</exemple>
+			<opcode>32</opcode>
+		</instruction>
+		<instruction>
+			<name>lload_3</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction charge un long depuis une variable locale 3 dans la stack. Cette instruction ne prend rien en paramètre.</description>
+ 
+			<exemple>lload_3</exemple>
+			<opcode>33</opcode>
+		</instruction>
+		<instruction>
+			<name>lmul</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction multiplie deux long depuis la stack. Cette instruction ne prend aucun paramètre.s</description>
+			<exemple>lmul (L'instruction multiplie deux long qui par exemple vont être chargés avec lload avant).</exemple>
+ 
+			<opcode>105</opcode>
+		</instruction>
+		<instruction>
+			<name>lneg</name>
+			<parameters>
+			</parameters>
+  
+	
+  
+			<description>Cette instruction rend négatif la valeur long de la stack. Elle effectue une soustration à 0. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>lneg (L'instruction rend négatif un long qui est par exemple chargé avec lload avant).</exemple>
+ 
+			<opcode>117</opcode>
+		</instruction>
+		<instruction>
+			<name>lookupswitch</name>
+			<parameters>
+				<parameter>&lt;0–3 bytes padding></parameter>
+				<parameter>defaultbyte1</parameter>
+				<parameter>defaultbyte2</parameter>
+				<parameter>defaultbyte3</parameter>
+				<parameter>defaultbyte4</parameter>
+				<parameter>npairs1</parameter>
+				<parameter>npairs2</parameter>
+				<parameter>npairs3</parameter>
+				<parameter>npairs4</parameter>
+				<parameter>match-offset pairs...</parameter>
+			</parameters>
+  
+			<description>Cette instruction correspond au switch du java. Elle s'appuie sur un tableau de labels et de clés.</description>
+  
+ 
+			<exemple>lookupswitch
+    1       : Label1
+    10      : Label10
+    100     : Label100
+    1000    : Label1000
+    default : DefaultLabel (Dans le cas d'un switch avec des cases de 1,10,100,1000 ils sont affichés).</exemple>
+			<opcode>171</opcode>
+		</instruction>
+		<instruction>
+			<name>lor</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue l'opération OR logique entre deux entiers de type long. Cette instruction ne prend aucun paramètre.</description>
+  
+ 
+			<exemple>lor</exemple>
+			<opcode>129</opcode>
+		</instruction>
+		<instruction>
+			<name>lrem</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction effectue une opération de division pour obtenir le reste entre deux valeurs de type long. Cette instruction ne prend pas de paramètre.</description>
+  
+		
+ 
+			<exemple>TODO</exemple>
+			<opcode>113</opcode>
+		</instruction>
+		<instruction>
+			<name>lreturn</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction retourne un long d'une méthode. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>lreturn</exemple>
+			<opcode>173</opcode>
+		</instruction>
+		<instruction>
+			<name>lshl</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction effectue un décalage des bits vers la gauche d'une valeur long.</description>
+ 
+			<exemple>lshl</exemple>
+			<opcode>121</opcode>
+		</instruction>
+		<instruction>
+			<name>lshr</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction effectue un décalage des bits vers la drite d'une valeur long.</description>
+ 
+			<exemple>lshr</exemple>
+			<opcode>123</opcode>
+		</instruction>
+		<instruction>
+			<name>lstore</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+    
+			<description>Cette instruction stocke une valeur de type long dans une variable locale donnée en paramètre #index.</description>
+ 
+			<exemple>lstore</exemple>
+			<opcode>55</opcode>
+		</instruction>
+		<instruction>
+			<name>lstore_0</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction stocke un long dans la variable locale lstore_0. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>lstore_0</exemple>
+			<opcode>63</opcode>
+		</instruction>
+		<instruction>
+			<name>lstore_1</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un long dans la variable locale lstore_1. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>lstore_1</exemple>
+			<opcode>64</opcode>
+		</instruction>
+		<instruction>
+			<name>lstore_2</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un long dans la variable locale lstore_2. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>lstore_2</exemple>
+			<opcode>65</opcode>
+		</instruction>
+		<instruction>
+			<name>lstore_3</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke un long dans la variable locale lstore_3. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>lstore_3</exemple>
+			<opcode>66</opcode>
+		</instruction>
+		<instruction>
+			<name>lsub</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération de soustraction entre deux valeurs de type long. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>lsub (Suite à deux long chargés via un lload par exemple effectue l'opération de soustraction entre les deux valeurs).</exemple>
+ 
+			<opcode>101</opcode>
+		</instruction>
+		<instruction>
+			<name>lushr</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération de Logical Shift Right entre une valeur de type long et une valeur de type int. Cette instruction ne prend aucun paramètre.</description>
+			<exemple>lushr (Suite à un long et un int chargés via un lload et un iload par exemple effectue l'opération de Logical Shift Right entre les deux valeurs). </exemple>
+ 
+			<opcode>125</opcode>
+		</instruction>
+		<instruction>
+			<name>lxor</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction effectue l'opération ou exculif (XOR) entre deux valeurs de type long. Cette instruction ne prend aucun paramètres.</description>
+			<exemple>lxor (Suite à deux long chargés via un lload par exemple effectue l'opération xor entre les deux valeurs).</exemple>
+ 
+			<opcode>131</opcode>
+		</instruction>
+		<instruction>
+			<name>monitorenter</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction indique qu'un cadenas est posé comme le wait en java.</description>
+			<exemple>monitorenter</exemple>
+			<opcode>194</opcode>
+		</instruction>
+		<instruction>
+			<name>monitorexit</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction indique q'un cadena est ouvert, laché comme le notify du java.</description>
+			<exemple>monitorexit</exemple>
+			<opcode>195</opcode>
+		</instruction>
+		<instruction>
+			<name>multianewarray</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+				<parameter>dimensions</parameter>
+			</parameters>
+  
+  
+			<description>Cette instruction crée un nouveau tableau multi dimension avec une taille donné dans la stack</description>
+ 
+			<exemple>TODO</exemple>
+			<opcode>197</opcode>
+		</instruction>
+		<instruction>
+			<name>new</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+    
+			<description>Cette instruction crée un nouvel objet.</description>
+ 
+			<exemple>new</exemple>
+			<opcode>187</opcode>
+		</instruction>
+		<instruction>
+			<name>newarray</name>
+			<parameters>
+				<parameter>atype</parameter>
+			</parameters>
+  
+		
+  
+			<description>Cette instruction stockecréer un nouveau tableau de boolean, char, float, double, byte, short, int ou long donné en paramètre. Dans l'ordre énoncé précédemment, le paramètre peut être 4, 5, 6, 7, 8, 9, 10, 11</description>
+			<exemple>newarray 11 (crée un tableau de long)</exemple>
+ 
+			<opcode>188</opcode>
+		</instruction>
+		<instruction>
+			<name>nop</name>
+			<parameters>
+			</parameters>
+			<description>Cette instruction ne fait rien.</description>
+			<exemple>nop</exemple>
+			<opcode>0</opcode>
+		</instruction>
+		<instruction>
+			<name>pop</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction retire de la stack la valeur se trouvant à son sommet. Cette instruction ne prend pas de paramètre.</description>
+   
+			<exemple>pop</exemple>
+			<opcode>87</opcode>
+		</instruction>
+		<instruction>
+			<name>pop2</name>
+			<parameters>
+			</parameters>
+  
+			<description>Cette instruction retire de la stack deux valeur se trouvant à son sommet ou une si la valeur est de type double ou long. Cette instruction ne prend pas de paramètre.</description>
+ 
+			<exemple>pop2</exemple>
+			<opcode>88</opcode>
+		</instruction>
+		<instruction>
+			<name>putfield</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Cette instruction sert à réassigner un champ d'objet d'un objet. Comme pour un setter en java.</description>
+			<exemple>putfield</exemple>
+			<opcode>181</opcode>
+		</instruction>
+		<instruction>
+			<name>putstatic</name>
+			<parameters>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+			</parameters>
+			<description>Cette instruction sert à réassigner un champ d'objet d'un objet static.</description>
+			<exemple>pustatic</exemple>
+			<opcode>179</opcode>
+		</instruction>
+		<instruction>
+			<name>ret</name>
+			<parameters>
+				<parameter>index</parameter>
+			</parameters>
+			<description>Cette instruction est dépréciée.</description>
+			<exemple>ret</exemple>
+			<opcode>169</opcode>
+		</instruction>
+		<instruction>
+			<name>return</name>
+			<parameters>
+			</parameters>
+    
+			<description>Cette instruction indique qu'une méthode retourne void en type de retour. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>return</exemple>
+			<opcode>177</opcode>
+		</instruction>
+		<instruction>
+			<name>saload</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction charge un short d'un tableau. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>saload</exemple>
+			<opcode>53</opcode>
+		</instruction>
+		<instruction>
+			<name>sastore</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction stocke dans la stack le nouvel élément ajouter dans le tableau. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>TODO</exemple>
+			<opcode>86</opcode>
+		</instruction>
+		<instruction>
+			<name>sipush</name>
+			<parameters>
+				<parameter>n</parameter>
+			</parameters>
+
+  
+			<description>Cette instruction multiplie et retourne la valeur en paramètre "n" dans la stack de type short vers int. "n" appartient à l'intervalle [-32 768; 32 767]</description>
+ 
+			<exemple>sipush 14609</exemple>
+			<opcode>17</opcode>
+		</instruction>
+		<instruction>
+			<name>swap</name>
+			<parameters>
+			</parameters>
+  
+  
+			<description>Cette instruction échange la place des deux valeurs en haut de la stack. Cette instruction ne prend aucun paramètre.</description>
+ 
+			<exemple>swap</exemple>
+			<opcode>95</opcode>
+		</instruction>
+		<instruction>
+			<name>tableswitch</name>
+			<parameters>
+				<parameter>[0–3 bytes padding]</parameter>
+				<parameter>defaultbyte1</parameter>
+				<parameter>defaultbyte2</parameter>
+				<parameter>defaultbyte3</parameter>
+				<parameter>defaultbyte4</parameter>
+				<parameter>lowbyte1</parameter>
+				<parameter>lowbyte2</parameter>
+				<parameter>lowbyte3</parameter>
+				<parameter>lowbyte4</parameter>
+				<parameter>highbyte1</parameter>
+				<parameter>highbyte2</parameter>
+				<parameter>highbyte3</parameter>
+				<parameter>highbyte4</parameter>
+				<parameter>jump offsets...</parameter>
+			</parameters>
+  
+			
+			<description>Cette instruction correspond au switch du java. La différence avec lookupswitch est que tableswitch utilise des labels. Dans le cas du switch il utilise le nom du case pour effectuer son instruction.</description>
+ 
+			<exemple>tableswitch 1 3
+    OneLabel
+    TwoLabel
+    ThreeLabel
+  default: DefaultLabel (Nous voyons bien les 3 cases du java)</exemple>
+			<opcode>170</opcode>
+		</instruction>
+		<instruction>
+			<name>wide</name>
+			<parameters>
+				<parameter>opcode</parameter>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2 or iinc</parameter>
+				<parameter>indexbyte1</parameter>
+				<parameter>indexbyte2</parameter>
+				<parameter>countbyte1</parameter>
+				<parameter>countbyte2</parameter>
+			</parameters>
+			<description>Cette instruction est utilisée pour encoder les instructions de stokage et de chargement sur un octet.</description>
+			<exemple>L'affichage est généralement le type contenu comme istore_w</exemple>
+			<opcode>196</opcode>
+		</instruction>
+	</instructions>
+</documentation>
